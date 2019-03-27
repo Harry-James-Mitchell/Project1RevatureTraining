@@ -2,6 +2,6 @@ trigger TransactionTrigger on Transaction__c (before insert, after delete, after
 
     if(trigger.isAfter && !TransactionHelper.alreadyExecuted){
         TransactionHelper.updateAllTransactions();
-        BudgetHelper.updateBudgets();
+        TransactionHelper.updateBudgets();
     }
 }
