@@ -1,5 +1,5 @@
-trigger BudgetTrigger on Budget__c (after insert) {
-    if(trigger.isAfter && trigger.isInsert){
+trigger BudgetTrigger on Budget__c (before insert) {
+    if(trigger.isBefore && trigger.isInsert){
             BudgetHelper.setRemainingBudgetForNewBudgets(trigger.new);
         }
 }
