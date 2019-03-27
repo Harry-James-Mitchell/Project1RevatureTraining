@@ -130,7 +130,7 @@ public class TransactionHelper {
     	for(Transaction__c newTransaction : newTransactions){
     		BudgetIds.add(newTransaction.Budget__c);
     	}
-    	List<Budget__c> relevantBudgets = [SELECT Id, BudgetInitial, Budget_Remaining FROM Budget WHERE Id IN :BudgetIds];
+    	List<Budget__c> relevantBudgets = [SELECT Id, BudgetInitial__c, Budget_Remaining__c FROM Budget__c WHERE Id IN :BudgetIds];
     	List<Budget__c> updatedBudgets = new List<Budget__c>();
     	
     	for(Transaction__c newTransaction : newTransactions ){
